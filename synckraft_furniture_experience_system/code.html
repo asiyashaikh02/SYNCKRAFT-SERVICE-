@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Synckraft Furniture Experience System</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed-dim": "#89ceff",
+                    "on-primary-fixed-variant": "#004c6e",
+                    "primary-container": "#001a29",
+                    "surface-tint": "#89ceff",
+                    "primary": "#89ceff",
+                    "on-background": "#dae2fd",
+                    "surface-container-high": "#222a3d",
+                    "inverse-on-surface": "#283044",
+                    "inverse-primary": "#006591",
+                    "surface-container-lowest": "#060e20",
+                    "on-tertiary-container": "#a956f8",
+                    "on-error": "#690005",
+                    "on-surface-variant": "#c6c6cd",
+                    "secondary-fixed-dim": "#c0c1ff",
+                    "secondary-fixed": "#e1e0ff",
+                    "error-container": "#93000a",
+                    "on-primary": "#00344d",
+                    "error": "#ffb4ab",
+                    "tertiary": "#ddb7ff",
+                    "on-tertiary": "#490080",
+                    "on-primary-container": "#0089c3",
+                    "primary-fixed": "#c9e6ff",
+                    "surface": "#0b1326",
+                    "surface-dim": "#0b1326",
+                    "outline-variant": "#45464d",
+                    "on-error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#2f2ebe",
+                    "on-secondary": "#1000a9",
+                    "surface-container-highest": "#2d3449",
+                    "secondary": "#c0c1ff",
+                    "on-tertiary-fixed-variant": "#6900b3",
+                    "surface-container-low": "#131b2e",
+                    "inverse-surface": "#dae2fd",
+                    "tertiary-fixed-dim": "#ddb7ff",
+                    "secondary-container": "#3131c0",
+                    "on-tertiary-fixed": "#2c0051",
+                    "tertiary-container": "#270048",
+                    "on-surface": "#dae2fd",
+                    "outline": "#909097",
+                    "on-secondary-container": "#b0b2ff",
+                    "tertiary-fixed": "#f0dbff",
+                    "on-primary-fixed": "#001e2f",
+                    "background": "#0b1326",
+                    "surface-variant": "#2d3449",
+                    "on-secondary-fixed": "#07006c",
+                    "surface-container": "#171f33",
+                    "surface-bright": "#31394d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tonal-shift {
+            transition: background-color 0.3s ease;
+        }
+        body {
+            background-color: #0b1326;
+            color: #dae2fd;
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="overflow-x-hidden selection:bg-primary-container selection:text-primary">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#0b1326]/60 backdrop-blur-xl shadow-[0_20px_40px_rgba(218,226,253,0.04)]">
+<div class="flex justify-between items-center px-8 py-4 w-full max-w-full">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#89ceff] text-2xl">hub</span>
+<span class="font-['Manrope'] font-bold tracking-tight text-2xl font-black text-[#89ceff] tracking-tighter">Synckraft</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-[#89ceff] border-b-2 border-[#89ceff] font-medium transition-colors duration-300" href="#">Industries</a>
+<a class="text-[#dae2fd]/70 hover:text-[#89ceff] transition-colors duration-300 font-medium" href="#">Solutions</a>
+<a class="text-[#dae2fd]/70 hover:text-[#89ceff] transition-colors duration-300 font-medium" href="#">Growth</a>
+<a class="text-[#dae2fd]/70 hover:text-[#89ceff] transition-colors duration-300 font-medium" href="#">Reports</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="px-5 py-2 bg-[#171f33] rounded-xl text-primary font-semibold text-sm active:scale-95 duration-200">
+                    Book Furniture Demo
+                </button>
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant/20">
+<img alt="User Avatar" data-alt="professional user profile portrait with soft studio lighting and neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhHGDaJAdhhfjV7e9iAGb9tuq_LLxUJkI29jZqYMe90o8l0hy6m28k7z9IJGaVee9Md_UnWloNRQYhDoIdBjDYbe8snPW5OAwFDqhZKbrgpI9ykDkwunomnVpbmkCcOLlZV3K7YMt0wLb0VAoAdaxHiEpyGJq6s3AX0dK7BLa4Zt0ADqs7Xxgy2uEKcAVsr4jfPo1UllcrJAUEtgmGoSKBqBeAmcEZQvok4DEII6TWK1_6HiIzsJqVRj6z7xiEZ5ITlRDO5qVsnyo"/>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32">
+<!-- Hero Section -->
+<section class="relative px-8 py-20 overflow-hidden">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7 space-y-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container/20 border border-secondary/20">
+<span class="material-symbols-outlined text-sm text-secondary">architecture</span>
+<span class="text-xs font-semibold tracking-widest uppercase text-secondary">Spatial Computing UI</span>
+</div>
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tight text-on-surface leading-tight">
+                        Synckraft <br/><span class="text-primary">Furniture Experience</span> System
+                    </h1>
+<p class="text-xl text-on-surface-variant max-w-xl leading-relaxed">
+                        Transforming retail through cognitive architecture. High-fidelity 3D visualization meets seamless omnichannel commerce for the modern furniture brand.
+                    </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="px-8 py-4 bg-gradient-to-br from-primary to-on-primary-container text-on-primary font-bold rounded-xl shadow-lg shadow-primary/10 hover:brightness-110 active:scale-95 transition-all">
+                            Book Furniture Demo
+                        </button>
+<button class="px-8 py-4 bg-surface-container-highest border border-primary/30 text-primary font-bold rounded-xl hover:bg-surface-container-high transition-all">
+                            Explore Catalog
+                        </button>
+</div>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl shadow-black/50 border border-outline-variant/20 bg-surface-container-low aspect-square">
+<img alt="Furniture Visualization" class="w-full h-full object-cover opacity-80" data-alt="minimalist modern living room with designer chair and ambient lighting in a high-end architectural space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArl8Eebbu5bT0h4N691ir3S9HjpiN8NurKnWBETvyqMwPkt00491q8x2QEgI6gF67ZYWv81d8KHztIjeSCXhl5Q5QbWcXDcRm4-4va1RgDBmhl-4js4vL3HEqUjc-Pm24ko5BaC_qs2SZEB9bZR8GSsd3JyOtogYwbdnH5Rdi2sJFnmn9eoiGYR_NF3zGKnwE1KHV2QhK8w_-Yr8nSPun7LhXZm11jA9y_NkohVoUrBAXMlNLrbtjpaJiX0NfViEziRnL9kpqB24c"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-40"></div>
+<!-- Floating UI Elements -->
+<div class="absolute top-6 left-6 bg-surface/80 backdrop-blur-md p-4 rounded-xl border border-outline-variant/20 shadow-xl">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+<span class="text-xs font-bold text-on-surface uppercase tracking-tighter">Real-time Raytracing</span>
+</div>
+</div>
+</div>
+<!-- Decorative Background Glow -->
+<div class="absolute -top-20 -right-20 w-64 h-64 bg-primary/20 blur-[100px] rounded-full"></div>
+<div class="absolute -bottom-10 -left-10 w-48 h-48 bg-tertiary/10 blur-[80px] rounded-full"></div>
+</div>
+</div>
+</section>
+<!-- Product Visualization Bento Grid -->
+<section class="px-8 py-20 bg-surface-container-low/30">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+<div class="max-w-2xl">
+<h2 class="font-headline text-4xl font-bold text-on-surface mb-4">Product Visualization</h2>
+<p class="text-on-surface-variant text-lg">Next-generation rendering pipelines that blur the line between digital and physical.</p>
+</div>
+<div class="hidden md:block h-[1px] flex-grow mx-12 bg-outline-variant/20"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- 3D Furniture Preview -->
+<div class="md:col-span-2 group relative overflow-hidden rounded-2xl bg-surface-container border border-outline-variant/10 p-8 hover:bg-surface-container-high transition-all duration-500">
+<div class="relative z-10 h-full flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-primary mb-4 text-4xl">view_in_ar</span>
+<h3 class="text-2xl font-bold text-on-surface mb-2">3D Furniture Preview</h3>
+<p class="text-on-surface-variant max-w-sm">Photorealistic 4K models with interactive material switching and sub-millimeter precision.</p>
+</div>
+<div class="mt-12 flex gap-2">
+<span class="px-3 py-1 rounded-full bg-surface-container-lowest text-[10px] font-bold text-primary border border-primary/20">WEBGL 2.0</span>
+<span class="px-3 py-1 rounded-full bg-surface-container-lowest text-[10px] font-bold text-primary border border-primary/20">USDZ SUPPORT</span>
+</div>
+</div>
+<img alt="3D Preview" class="absolute top-0 right-0 w-1/2 h-full object-cover opacity-20 grayscale group-hover:grayscale-0 group-hover:opacity-40 transition-all duration-700" data-alt="close-up of luxury velvet armchair showing intricate fabric texture and studio lighting details" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoQaz3IOv30Bqsls8RJg-rHYebNiH4q3TMhEyCLiH99Z1GEaOuw1L7ey-q3Sg98ffBywAMWSnhiqr0EWXQnUV5_er9elMU1voflj4pWYTtUq8Xxl8ZJCfP_pkvVeM8SbDxOZ9jIfySLxDmWbJafcaITBwo1UIoXycRi19oJRCwx2jfbYWfVM4WDN4GMkex1dFWXCCpLMmSn1JoC7YG3dpdjdUap_WUsSjSlwqWkJ6Zk1AcezK0JEpg8FtN7F307_F8G0-2Eh-d5fs"/>
+</div>
+<!-- Room Visualization -->
+<div class="bg-surface-container-high border border-outline-variant/20 rounded-2xl p-8 flex flex-col justify-center items-center text-center relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-tertiary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<span class="material-symbols-outlined text-tertiary text-5xl mb-6" style="font-variation-settings: 'FILL' 1;">texture</span>
+<h3 class="text-xl font-bold text-on-surface mb-3">Room Visualization</h3>
+<p class="text-on-surface-variant text-sm">AI-driven spatial layout tool that populates empty rooms with curated furniture sets based on room dimensions.</p>
+</div>
+<!-- Product Catalog -->
+<div class="bg-surface-container-lowest border border-outline-variant/10 rounded-2xl p-8 md:col-span-3 grid grid-cols-1 md:grid-cols-4 gap-8 items-center">
+<div class="md:col-span-1">
+<h3 class="text-xl font-bold text-on-surface mb-2">Omni-Catalog</h3>
+<p class="text-on-surface-variant text-sm">Centralized asset management for global inventory across all digital channels.</p>
+</div>
+<div class="md:col-span-3 flex gap-4 overflow-x-auto pb-4">
+<!-- Catalog Items -->
+<div class="min-w-[200px] aspect-[4/5] bg-surface-container rounded-xl overflow-hidden border border-outline-variant/20 flex flex-col">
+<div class="flex-grow">
+<img alt="Item 1" class="w-full h-full object-cover" data-alt="contemporary wooden dining chair in a minimalist setup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNedz98ijuUf79vazt1A5C_mm3061F7vGy8IQvIXP5gkUvs8aLSv9c-W5xUZimrB0AiwAU0ZUrxtKebnLdkIa-Ye48pJ6eucCyCFDu2acP-agD4Otl8yFgHeqqj9G9pFqlIHvIpvtjS51zCcxHLtqT9_kFauSKQ9nGx7rFh5bFW99hw6V8p--DYC_SwyIvHCaZDoPKVWTEsbZXXLeT84lcBIq3K1wb5P6Chw6HoUglC_h-v6Sl46-AsGqVZkLNHaUh5e1Xycb7GsE"/>
+</div>
+<div class="p-3 bg-surface-container-highest/50">
+<p class="text-xs font-bold">Nordic Oak Chair</p>
+<p class="text-[10px] text-primary">$450.00</p>
+</div>
+</div>
+<div class="min-w-[200px] aspect-[4/5] bg-surface-container rounded-xl overflow-hidden border border-outline-variant/20 flex flex-col">
+<div class="flex-grow">
+<img alt="Item 2" class="w-full h-full object-cover" data-alt="emerald green velvet sofa against a dark wall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwBH9ufabPSebnmVi7BUWgARZ6cz0fd2x9HvxpLTxNcU0l7SrKfu9cnMGfXE66Sfid4VosmsdpW6iOUTtOa_W5v-eSbJjA6MpRNgWy7lg3t-LWcJmXJv7TH55G97hOX_DmKm4Clwp5aCpRPH0rDlB4Qtjste2G2CcLclE4mi0rCKi-uxsP4CekaPYwGpFiAIzOgX5ByKWLo9Y8aRJF91PlXBHxDmzrkapeCLzTmPL29M2q-mUyrFlCSTBiQoOnqvZBrfsmWUv7F0I"/>
+</div>
+<div class="p-3 bg-surface-container-highest/50">
+<p class="text-xs font-bold">Velvet Sofa</p>
+<p class="text-[10px] text-primary">$1,200.00</p>
+</div>
+</div>
+<div class="min-w-[200px] aspect-[4/5] bg-surface-container rounded-xl overflow-hidden border border-outline-variant/20 flex flex-col">
+<div class="flex-grow">
+<img alt="Item 3" class="w-full h-full object-cover" data-alt="minimalist floating bedside table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1DnGPg0_p5h72SRZV5c5BJl_HiBuP7KZHvxbyJsUYLoTdihJSNFKD9iPQMs2eYuPoSPRZUbCKxMM1U1N5N50RbnxcBoh9Tdp_fIzJ2KirAJL9LLpXeGZddteC-rnTE74hTN2-dST6G1GnsDSBowmz9XYk1aZfv4Lo8gm_Hk7d8IIjDvdHddQSB1gEz1osii3cXBIb9S1TaC0N0BefM0yOqUIV2ta0dHakEPFUjOMoGbIiksewcvoY1zru2TOGkBwKzBDh_a6d5j8"/>
+</div>
+<div class="p-3 bg-surface-container-highest/50">
+<p class="text-xs font-bold">Float Stand</p>
+<p class="text-[10px] text-primary">$299.00</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Ecommerce Experience -->
+<section class="px-8 py-20 overflow-hidden">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="order-2 lg:order-1 relative">
+<!-- Customization Interface Mockup -->
+<div class="bg-surface-container rounded-3xl p-6 border border-outline-variant/20 shadow-2xl relative z-10">
+<div class="flex items-center justify-between mb-8">
+<h4 class="font-bold text-on-surface">Customization Studio</h4>
+<span class="material-symbols-outlined text-primary">auto_fix</span>
+</div>
+<div class="space-y-6">
+<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/20">
+<p class="text-xs font-bold text-on-surface-variant uppercase mb-3">Primary Fabric</p>
+<div class="flex gap-3">
+<div class="w-8 h-8 rounded-full bg-[#3d3d3d] border-2 border-primary cursor-pointer"></div>
+<div class="w-8 h-8 rounded-full bg-[#8b4513] border-2 border-transparent cursor-pointer"></div>
+<div class="w-8 h-8 rounded-full bg-[#2f4f4f] border-2 border-transparent cursor-pointer"></div>
+<div class="w-8 h-8 rounded-full bg-[#708090] border-2 border-transparent cursor-pointer"></div>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/20">
+<p class="text-xs font-bold text-on-surface-variant uppercase mb-3">Leg Finish</p>
+<div class="grid grid-cols-2 gap-2">
+<div class="py-2 px-3 rounded-lg bg-surface-container-highest text-[10px] font-bold text-center">NATURAL OAK</div>
+<div class="py-2 px-3 rounded-lg border border-primary/40 bg-primary/10 text-primary text-[10px] font-bold text-center">MATTE BLACK</div>
+</div>
+</div>
+</div>
+<button class="w-full mt-8 py-4 bg-primary text-on-primary font-bold rounded-xl active:scale-95 duration-200">
+                                Update Visualization
+                            </button>
+</div>
+<div class="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-primary/5 blur-[120px]"></div>
+</div>
+<div class="order-1 lg:order-2 space-y-8">
+<h2 class="font-headline text-4xl font-bold text-on-surface leading-tight">Next-Gen Ecommerce <br/>Architecture</h2>
+<div class="space-y-6">
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-xl bg-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">shopping_cart</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Integrated Online Store</h4>
+<p class="text-on-surface-variant text-sm mt-1 leading-relaxed">Fast-loading, SEO-optimized checkout flows designed for high-ticket furniture items with complex shipping requirements.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-xl bg-secondary-container/30 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary">tune</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Advanced Personalization</h4>
+<p class="text-on-surface-variant text-sm mt-1 leading-relaxed">Dynamic pricing engines that update in real-time as users customize finishes, sizes, and configurations.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-xl bg-tertiary-container/30 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-tertiary">chat_bubble</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Smart Inquiry System</h4>
+<p class="text-on-surface-variant text-sm mt-1 leading-relaxed">AI-routed lead generation for trade professionals and custom project consultations.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="px-8 py-24">
+<div class="max-w-5xl mx-auto rounded-3xl bg-gradient-to-br from-surface-container-high to-surface-container p-12 text-center border border-outline-variant/10 shadow-[0_40px_100px_rgba(0,0,0,0.4)] relative overflow-hidden">
+<div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, #89ceff 1px, transparent 0); background-size: 24px 24px;"></div>
+<div class="relative z-10 space-y-6">
+<h2 class="font-headline text-4xl md:text-5xl font-extrabold text-on-surface">Ready to redefine the <br/>spatial commerce experience?</h2>
+<p class="text-on-surface-variant text-lg max-w-2xl mx-auto">Join the leading furniture brands scaling with Synckraft's Furniture Experience System. Seamless integration, incredible performance.</p>
+<div class="pt-6">
+<button class="px-12 py-5 bg-primary text-on-primary font-black rounded-full text-lg shadow-xl shadow-primary/20 hover:scale-105 active:scale-95 transition-all">
+                            Book Furniture Demo
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-6 pb-6 pt-3 bg-[#0b1326]/80 backdrop-blur-md rounded-t-2xl border-t border-[#45464d]/20 z-50 shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
+<a class="flex flex-col items-center justify-center text-[#89ceff] bg-[#171f33] rounded-xl px-4 py-2 shadow-[0_0_15px_rgba(137,206,255,0.2)]" href="#">
+<span class="material-symbols-outlined">domain</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest font-semibold mt-1">Industries</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#dae2fd]/50 px-4 py-2 hover:bg-[#131b2e] hover:text-[#c0c1ff] transition-all" href="#">
+<span class="material-symbols-outlined">cognition</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest font-semibold mt-1">Solutions</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#dae2fd]/50 px-4 py-2 hover:bg-[#131b2e] hover:text-[#c0c1ff] transition-all" href="#">
+<span class="material-symbols-outlined">trending_up</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest font-semibold mt-1">Growth</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#dae2fd]/50 px-4 py-2 hover:bg-[#131b2e] hover:text-[#c0c1ff] transition-all" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest font-semibold mt-1">Reports</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#dae2fd]/50 px-4 py-2 hover:bg-[#131b2e] hover:text-[#c0c1ff] transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest font-semibold mt-1">Settings</span>
+</a>
+</nav>
+<!-- Footer Decoration -->
+<footer class="px-8 py-12 border-t border-outline-variant/10 text-center">
+<p class="text-on-surface-variant text-xs font-semibold tracking-widest uppercase opacity-40">© 2024 SYNCKRAFT COGNITIVE SYSTEMS. ALL RIGHTS RESERVED.</p>
+</footer>
+<a href="../synckraft_home/code.html" class="fixed bottom-24 right-6 z-[100] flex items-center gap-2 bg-[#0089c3] text-white border border-[#89ceff]/50 px-4 py-3 rounded-full font-bold shadow-2xl hover:scale-105 transition-all" style="backdrop-filter: blur(10px);"><span class="material-symbols-outlined">home</span> Back to Home</a>
+</body></html>
