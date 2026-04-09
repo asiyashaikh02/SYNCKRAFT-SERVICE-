@@ -1,21 +1,50 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import React, { Suspense, lazy } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import React, { Suspense, lazy, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
 // Lazy load pages for performance
 const Home = lazy(() => import('./pages/Home'));
-const Restaurant = lazy(() => import('./pages/Restaurant'));
-const RealEstate = lazy(() => import('./pages/RealEstate'));
-const Retail = lazy(() => import('./pages/Retail'));
-const Furniture = lazy(() => import('./pages/Furniture'));
-const Fashion = lazy(() => import('./pages/Fashion'));
-const Jewelry = lazy(() => import('./pages/Jewelry'));
-const Healthcare = lazy(() => import('./pages/Healthcare'));
+const Industries = lazy(() => import('./pages/Industries'));
+const Services = lazy(() => import('./pages/Services'));
+const Products = lazy(() => import('./pages/Products'));
+const About = lazy(() => import('./pages/About'));
+const Contact = lazy(() => import('./pages/Contact'));
 
-// Loading fallback component
+// Industry pages
+const Restaurant = lazy(() => import('./pages/industries/Restaurant'));
+const RealEstate = lazy(() => import('./pages/industries/RealEstate'));
+const Retail = lazy(() => import('./pages/industries/Retail'));
+const Furniture = lazy(() => import('./pages/industries/Furniture'));
+const Fashion = lazy(() => import('./pages/industries/Fashion'));
+const Jewelry = lazy(() => import('./pages/industries/Jewelry'));
+const Healthcare = lazy(() => import('./pages/industries/Healthcare'));
+const Automobile = lazy(() => import('./pages/industries/Automobile'));
+const Education = lazy(() => import('./pages/industries/Education'));
+const Hospitality = lazy(() => import('./pages/industries/Hospitality'));
+
+// Utility to handle hash scrolling
+function ScrollToHash() {
+  const { hash, pathname } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      setTimeout(() => {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [hash, pathname]);
+
+  return null;
+}
+
 const Loader = () => (
-  <div className="min-h-screen flex items-center justify-center bg-surface text-primary">
+  <div className="min-h-screen flex items-center justify-center bg-surface">
     <div className="w-10 h-10 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
   </div>
 );
@@ -23,17 +52,28 @@ const Loader = () => (
 function App() {
   return (
     <Router>
+      <ScrollToHash />
       <Navbar ctaText="Get Started" />
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/restaurant" element={<Restaurant />} />
-          <Route path="/real-estate" element={<RealEstate />} />
-          <Route path="/retail" element={<Retail />} />
-          <Route path="/furniture" element={<Furniture />} />
-          <Route path="/fashion" element={<Fashion />} />
-          <Route path="/jewelry" element={<Jewelry />} />
-          <Route path="/healthcare" element={<Healthcare />} />
+          
+          <Route path="/industries" element={<Industries />} />
+          <Route path="/industries/restaurant" element={<Restaurant />} />
+          <Route path="/industries/real-estate" element={<RealEstate />} />
+          <Route path="/industries/retail" element={<Retail />} />
+          <Route path="/industries/furniture" element={<Furniture />} />
+          <Route path="/industries/fashion" element={<Fashion />} />
+          <Route path="/industries/jewelry" element={<Jewelry />} />
+          <Route path="/industries/healthcare" element={<Healthcare />} />
+          <Route path="/industries/automobile" element={<Automobile />} />
+          <Route path="/industries/education" element={<Education />} />
+          <Route path="/industries/hospitality" element={<Hospitality />} />
+
+          <Route path="/services" element={<Services />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </Suspense>
       <Footer />
