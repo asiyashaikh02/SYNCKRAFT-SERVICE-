@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#131b2e",
+                        "inverse-primary": "#006591",
+                        "tertiary": "#ddb7ff",
+                        "secondary": "#c0c1ff",
+                        "on-primary-container": "#0089c3",
+                        "background": "#0b1326",
+                        "surface-container": "#171f33",
+                        "outline-variant": "#45464d",
+                        "surface-container-high": "#222a3d",
+                        "primary-fixed-dim": "#89ceff",
+                        "primary": "#89ceff",
+                        "on-primary-fixed-variant": "#004c6e",
+                        "error": "#ffb4ab",
+                        "surface": "#0b1326",
+                        "on-tertiary-fixed-variant": "#6900b3",
+                        "on-secondary": "#1000a9",
+                        "on-surface-variant": "#c6c6cd",
+                        "secondary-container": "#3131c0",
+                        "surface-dim": "#0b1326",
+                        "tertiary-fixed-dim": "#ddb7ff",
+                        "surface-tint": "#89ceff",
+                        "on-tertiary": "#490080",
+                        "on-primary": "#00344d",
+                        "secondary-fixed-dim": "#c0c1ff",
+                        "tertiary-container": "#270048",
+                        "on-tertiary-container": "#a956f8",
+                        "error-container": "#93000a",
+                        "outline": "#909097",
+                        "on-secondary-fixed-variant": "#2f2ebe",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed": "#f0dbff",
+                        "on-tertiary-fixed": "#2c0051",
+                        "inverse-surface": "#dae2fd",
+                        "surface-container-highest": "#2d3449",
+                        "on-surface": "#dae2fd",
+                        "primary-fixed": "#c9e6ff",
+                        "secondary-fixed": "#e1e0ff",
+                        "primary-container": "#001a29",
+                        "on-background": "#dae2fd",
+                        "inverse-on-surface": "#283044",
+                        "on-primary-fixed": "#001e2f",
+                        "on-secondary-fixed": "#07006c",
+                        "surface-container-lowest": "#060e20",
+                        "on-secondary-container": "#b0b2ff",
+                        "surface-variant": "#2d3449",
+                        "on-error": "#690005",
+                        "surface-bright": "#31394d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-header {
+            background: rgba(11, 19, 38, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 50%, rgba(137, 206, 255, 0.1) 0%, rgba(11, 19, 38, 0) 70%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary/30">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 glass-header shadow-2xl shadow-[#000000]/20">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#89ceff] text-3xl" data-icon="memory">memory</span>
+<span class="text-2xl font-bold tracking-tighter text-[#dae2fd] font-headline">SYNCKRAFT</span>
+</div>
+<nav class="hidden md:flex items-center gap-8 font-inter text-sm">
+<a class="text-[#89ceff] font-bold border-b-2 border-[#89ceff] pb-1" href="#">Home</a>
+<a class="text-[#dae2fd]/70 hover:text-[#dae2fd] transition-colors" href="#">Services</a>
+<a class="text-[#dae2fd]/70 hover:text-[#dae2fd] transition-colors" href="#">Industries</a>
+<a class="text-[#dae2fd]/70 hover:text-[#dae2fd] transition-colors" href="#">Products</a>
+<a class="text-[#dae2fd]/70 hover:text-[#dae2fd] transition-colors" href="#">About</a>
+<a class="text-[#dae2fd]/70 hover:text-[#dae2fd] transition-colors" href="#">Contact</a>
+</nav>
+<button class="bg-gradient-to-br from-primary to-on-primary-container text-on-primary px-6 py-2 rounded-lg font-semibold hover:brightness-110 transition-all active:scale-95">
+                Get Started
+            </button>
+</div>
+</header>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative min-h-[707px] flex flex-col items-center justify-center text-center px-6 overflow-hidden">
+<div class="hero-gradient absolute inset-0 pointer-events-none"></div>
+<div class="relative z-10 max-w-5xl mx-auto">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary-container/20 border border-secondary/20 text-on-secondary-container text-xs font-medium mb-8">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                    Next-Gen AI Orchestration
+                </div>
+<h1 class="text-5xl md:text-7xl font-extrabold font-headline tracking-tighter text-on-surface mb-8 leading-[1.1]">
+                    AI Powered Business Systems for <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-tertiary">Modern Businesses</span>
+</h1>
+<p class="text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto mb-12 font-light">
+                    Transforming complex enterprise workflows into seamless, automated intelligence. Precision engineering for the digital-first era.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+<button class="w-full sm:w-auto px-8 py-4 bg-primary text-on-primary rounded-xl font-bold text-lg hover:shadow-[0_0_20px_rgba(137,206,255,0.4)] transition-all">
+                        Launch Systems
+                    </button>
+<button class="w-full sm:w-auto px-8 py-4 bg-surface-container-high text-on-surface rounded-xl font-bold text-lg border border-outline-variant/20 hover:bg-surface-container-highest transition-all">
+                        View Solutions
+                    </button>
+</div>
+</div>
+<!-- Abstract Visual -->
+<div class="mt-20 w-full max-w-6xl mx-auto px-4 opacity-50">
+<div class="h-px bg-gradient-to-r from-transparent via-outline-variant/30 to-transparent"></div>
+</div>
+</section>
+<!-- Primary Solutions -->
+<section class="py-24 px-6 max-w-screen-2xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div class="max-w-xl">
+<h2 class="text-3xl md:text-4xl font-bold font-headline mb-4">Core Ecosystems</h2>
+<p class="text-on-surface-variant">Our flagship AI frameworks designed for high-impact industrial scale.</p>
+</div>
+<span class="text-primary font-bold tracking-widest text-xs uppercase">Flagship Solutions</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Real Estate -->
+<a href="../real_estate_growth_system/code.html" class="group relative w-full block overflow-hidden rounded-3xl bg-surface-container border border-outline-variant/10 hover:border-primary/30 transition-all duration-500 cursor-pointer">
+<div class="aspect-[16/9] overflow-hidden">
+<img alt="Modern architecture" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="ultra-modern glass skyscraper reflecting a purple sunset sky with clean architectural lines and high-end aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXLqgtAVw-h9IJBYsIkzUsmikWSs4m7eybkf734RFgXYxZMJvnha1XEwZhhFyOvo2lTZ96_otqOPMbVLC6aCx14-gGZVoQ1yW6qHpDMNo4PJeJmMUcw6CElX9O88VucdFAPAVt5BXKf-y6Dt3wEKongkcOcu5Woq1nYyKSAZibP-4bCbDLA_VcMcKUnEO9t5cP6SgDFw_Yf3EVG20hBWwQ6Sh8Qy96pEgTBDltsRkVIm2gBJdRQnW-CLS0BrsZYadOWZZ1GMsiljA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/20 to-transparent"></div>
+</div>
+<div class="p-8 relative -mt-20">
+<div class="flex items-center gap-3 mb-4">
+<div class="p-3 rounded-2xl bg-primary/10 text-primary">
+<span class="material-symbols-outlined" data-icon="domain">domain</span>
+</div>
+<h3 class="text-2xl font-bold font-headline">Real Estate Solutions</h3>
+</div>
+<p class="text-on-surface-variant mb-6 leading-relaxed">
+                            Automated property valuation, smart lead scoring, and predictive maintenance scheduling for global portfolios.
+                        </p>
+<div class="flex items-center text-primary font-semibold gap-2 group-hover:gap-4 transition-all">
+                            Explore Real Estate <span class="material-symbols-outlined">arrow_forward</span>
+</div>
+</div>
+</a>
+<!-- Restaurant (Highlighted) -->
+<a href="../smart_restaurant_system/code.html" class="group relative w-full block overflow-hidden rounded-3xl bg-surface-container-high border-2 border-primary/40 shadow-2xl shadow-primary/10 transition-all duration-500 cursor-pointer">
+<div class="aspect-[16/9] overflow-hidden">
+<img alt="Luxury restaurant interior" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="luxury fine dining restaurant interior with moody warm lighting golden accents and contemporary designer furniture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzsVVE_948417n2Ty2DkCC4eHFPQCSbscziiKfHDdWW_ja4gr6MAE3QhQZrU2gv03i1DpvUoYR3kIOdHHoE0LRsPG935eJsrYvrE5LJ1nUO8jceje2onHLCImNvkEONEqcEqqr7i_N-06ggU9SIH2zzwG0doYfrWUvP9Y1hWu0x9GUduu2mFMnpq6GurXJH-uiH0CcZa1BQPdsFUuqzOTr6gO9y7cgcEeQocjy2qXa9xVN7jC8xkngzFdi9Wi_w7TjzxdZDhpdkDw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-high via-surface-container-high/20 to-transparent"></div>
+</div>
+<div class="p-8 relative -mt-20">
+<div class="absolute top-4 right-8 bg-primary text-on-primary text-[10px] font-black tracking-widest uppercase px-3 py-1 rounded-full">Popular</div>
+<div class="flex items-center gap-3 mb-4">
+<div class="p-3 rounded-2xl bg-primary text-on-primary">
+<span class="material-symbols-outlined" data-icon="restaurant" style="font-variation-settings: 'FILL' 1;">restaurant</span>
+</div>
+<h3 class="text-2xl font-bold font-headline">Restaurant Solutions</h3>
+</div>
+<p class="text-on-surface-variant mb-6 leading-relaxed">
+                            AI-driven inventory optimization, dynamic pricing models, and automated customer loyalty orchestration.
+                        </p>
+<div class="flex items-center text-primary font-semibold gap-2 group-hover:gap-4 transition-all">
+                            Explore Restaurant <span class="material-symbols-outlined">arrow_forward</span>
+</div>
+</div>
+</a>
+</div>
+</section>
+<!-- Secondary Industries Grid -->
+<section class="py-24 px-6 bg-surface-container-lowest">
+<div class="max-w-screen-2xl mx-auto">
+<div class="mb-16 text-center">
+<h2 class="text-3xl font-bold font-headline mb-4">Vertical Intelligence</h2>
+<p class="text-on-surface-variant">Specialized AI systems for diverse industry requirements.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+<!-- Healthcare -->
+<a href="../synckraft_healthcare_system/code.html" class="block group p-6 rounded-2xl bg-surface-container border border-outline-variant/5 hover:bg-surface-container-high hover:border-primary/20 transition-all cursor-pointer">
+<span class="material-symbols-outlined text-tertiary mb-4 block text-3xl" data-icon="medical_services">medical_services</span>
+<h4 class="font-bold mb-2">Healthcare</h4>
+<p class="text-xs text-on-surface-variant">Data-driven diagnostics &amp; ops.</p>
+</a>
+<!-- Fashion -->
+<a href="../synckraft_fashion_digital_experience/code.html" class="block group p-6 rounded-2xl bg-surface-container border border-outline-variant/5 hover:bg-surface-container-high hover:border-primary/20 transition-all cursor-pointer">
+<span class="material-symbols-outlined text-secondary mb-4 block text-3xl" data-icon="apparel">apparel</span>
+<h4 class="font-bold mb-2">Fashion</h4>
+<p class="text-xs text-on-surface-variant">Trend forecasting &amp; logistics.</p>
+</a>
+<!-- Beauty -->
+<a href="../synckraft_beauty_business_system/code.html" class="block group p-6 rounded-2xl bg-surface-container border border-outline-variant/5 hover:bg-surface-container-high hover:border-primary/20 transition-all cursor-pointer">
+<span class="material-symbols-outlined text-primary mb-4 block text-3xl" data-icon="auto_awesome">auto_awesome</span>
+<h4 class="font-bold mb-2">Beauty</h4>
+<p class="text-xs text-on-surface-variant">Personalized curation AI.</p>
+</a>
+<!-- Jewellery -->
+<a href="../synckraft_jewellery_digital_system/code.html" class="block group p-6 rounded-2xl bg-surface-container border border-outline-variant/5 hover:bg-surface-container-high hover:border-primary/20 transition-all cursor-pointer">
+<span class="material-symbols-outlined text-tertiary mb-4 block text-3xl" data-icon="diamond">diamond</span>
+<h4 class="font-bold mb-2">Jewellery</h4>
+<p class="text-xs text-on-surface-variant">Inventory tracking &amp; luxury CRM.</p>
+</a>
+<!-- Supermarkets -->
+<a href="../synckraft_supermarket/code.html" class="block group p-6 rounded-2xl bg-surface-container border border-outline-variant/5 hover:bg-surface-container-high hover:border-primary/20 transition-all cursor-pointer">
+<span class="material-symbols-outlined text-secondary mb-4 block text-3xl" data-icon="shopping_cart">shopping_cart</span>
+<h4 class="font-bold mb-2">Supermarkets</h4>
+<p class="text-xs text-on-surface-variant">Supply chain automation.</p>
+</a>
+<!-- Furniture -->
+<a href="../synckraft_furniture/code.html" class="block group p-6 rounded-2xl bg-surface-container border border-outline-variant/5 hover:bg-surface-container-high hover:border-primary/20 transition-all cursor-pointer">
+<span class="material-symbols-outlined text-primary mb-4 block text-3xl" data-icon="chair">chair</span>
+<h4 class="font-bold mb-2">Furniture</h4>
+<p class="text-xs text-on-surface-variant">AR-integrated retail systems.</p>
+</a>
+<!-- Gym -->
+<a href="../synckraft_gym_automation_system/code.html" class="block group p-6 rounded-2xl bg-surface-container border border-outline-variant/5 hover:bg-surface-container-high hover:border-primary/20 transition-all cursor-pointer">
+<span class="material-symbols-outlined text-tertiary mb-4 block text-3xl" data-icon="fitness_center">fitness_center</span>
+<h4 class="font-bold mb-2">Gym</h4>
+<p class="text-xs text-on-surface-variant">Member retention algorithms.</p>
+</a>
+<!-- Retail -->
+<a href="../synckraft_smart_retail_system/code.html" class="block group p-6 rounded-2xl bg-surface-container border border-outline-variant/5 hover:bg-surface-container-high hover:border-primary/20 transition-all cursor-pointer">
+<span class="material-symbols-outlined text-secondary mb-4 block text-3xl" data-icon="storefront">storefront</span>
+<h4 class="font-bold mb-2">Retail</h4>
+<p class="text-xs text-on-surface-variant">Intelligent retail analytics.</p>
+</a>
+<!-- AI Automation / Obsidian -->
+<a href="../synckraft_obsidian/code.html" class="block group p-6 rounded-2xl bg-primary/5 border border-primary/20 hover:bg-primary/10 transition-all cursor-pointer">
+<span class="material-symbols-outlined text-primary mb-4 block text-3xl" data-icon="robot_2" style="font-variation-settings: 'FILL' 1;">robot_2</span>
+<h4 class="font-bold mb-2">AI / Obsidian</h4>
+<p class="text-xs text-on-surface-variant">Core system transformations.</p>
+</a>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-32 px-6">
+<div class="max-w-4xl mx-auto rounded-[2rem] bg-gradient-to-br from-surface-container-high to-surface p-12 md:p-20 text-center relative overflow-hidden border border-outline-variant/20">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-[100px] rounded-full"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-tertiary/10 blur-[100px] rounded-full"></div>
+<h2 class="text-4xl md:text-5xl font-extrabold font-headline mb-8 relative z-10">Ready to Sync Your Business?</h2>
+<p class="text-on-surface-variant text-lg mb-12 relative z-10 max-w-xl mx-auto">
+                    Join hundreds of modern enterprises leveraging Synckraft's cognitive architecture to scale operations.
+                </p>
+<div class="flex flex-wrap justify-center gap-6 relative z-10">
+<button class="px-10 py-4 bg-primary text-on-primary rounded-xl font-bold hover:scale-105 transition-transform">
+                        Schedule Demo
+                    </button>
+<button class="px-10 py-4 bg-surface-container-highest text-on-surface rounded-xl font-bold border border-outline-variant/20 hover:bg-surface-bright transition-all">
+                        Talk to Sales
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-[#0b1326] border-t border-[#45464d]/20 py-12 px-8">
+<div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="text-lg font-bold text-[#dae2fd] font-headline tracking-tighter">SYNCKRAFT</div>
+<p class="font-inter text-xs uppercase tracking-widest text-[#dae2fd]/40">© 2024 Synckraft AI Business Systems. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-inter text-xs uppercase tracking-widest text-[#dae2fd]/40 hover:text-[#89ceff] transition-colors" href="#">WhatsApp</a>
+<a class="font-inter text-xs uppercase tracking-widest text-[#dae2fd]/40 hover:text-[#89ceff] transition-colors" href="#">LinkedIn</a>
+<a class="font-inter text-xs uppercase tracking-widest text-[#dae2fd]/40 hover:text-[#89ceff] transition-colors" href="#">Instagram</a>
+<a class="font-inter text-xs uppercase tracking-widest text-[#dae2fd]/40 hover:text-[#89ceff] transition-colors" href="#">Contact Info</a>
+<a class="font-inter text-xs uppercase tracking-widest text-[#dae2fd]/40 hover:text-[#89ceff] transition-colors" href="#">Email</a>
+</div>
+</div>
+</footer>
+</body></html>
