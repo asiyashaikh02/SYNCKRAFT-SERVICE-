@@ -8,7 +8,6 @@ const Home = lazy(() => import('./pages/Home'));
 const Industries = lazy(() => import('./pages/Industries'));
 const Services = lazy(() => import('./pages/Services'));
 const Products = lazy(() => import('./pages/Products'));
-const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
 
 // Industry pages
@@ -23,6 +22,9 @@ const Education = lazy(() => import('./pages/industries/Education'));
 const Healthcare = lazy(() => import('./pages/industries/Healthcare'));
 const Gym = lazy(() => import('./pages/industries/Gym'));
 const Hospitality = lazy(() => import('./pages/industries/Hospitality'));
+const Beauty = lazy(() => import('./pages/industries/Beauty'));
+const Supermarket = lazy(() => import('./pages/industries/Supermarket'));
+const Obsidian = lazy(() => import('./pages/industries/Obsidian'));
 
 // Utility to handle hash scrolling
 function ScrollToHash() {
@@ -66,11 +68,15 @@ function App() {
           <Route path="/industries/furniture" element={<Furniture />} />
           <Route path="/industries/fashion" element={<Fashion />} />
           <Route path="/industries/jewelry" element={<Jewelry />} />
+          <Route path="/industries/jewellery" element={<Jewelry />} />
           <Route path="/industries/automobile" element={<Automobile />} />
           <Route path="/industries/education" element={<Education />} />
           <Route path="/industries/healthcare" element={<Healthcare />} />
           <Route path="/industries/gym" element={<Gym />} />
           <Route path="/industries/hospitality" element={<Hospitality />} />
+          <Route path="/industries/beauty" element={<Beauty />} />
+          <Route path="/industries/supermarkets" element={<Supermarket />} />
+          <Route path="/industries/ai" element={<Obsidian />} />
 
           <Route path="/services" element={<Services />} />
           <Route path="/products" element={<Products />} />
