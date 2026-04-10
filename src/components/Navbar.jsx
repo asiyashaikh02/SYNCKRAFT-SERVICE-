@@ -5,15 +5,16 @@ import { ChevronDown, Menu, X } from 'lucide-react';
 
 const industryLinks = [
   { name: "Restaurant", path: "/industries/restaurant" },
-  { name: "Retail", path: "/industries/retail" },
+  { name: "Real Estate", path: "/industries/real-estate" },
+  { name: "Retail & Supermarket", path: "/industries/retail" },
   { name: "Fashion", path: "/industries/fashion" },
   { name: "Furniture", path: "/industries/furniture" },
   { name: "Jewelry", path: "/industries/jewelry" },
-  { name: "Real Estate", path: "/industries/real-estate" },
+  { name: "Healthcare & Medical", path: "/industries/healthcare" },
   { name: "Automobile", path: "/industries/automobile" },
-  { name: "Healthcare", path: "/industries/healthcare" },
   { name: "Education", path: "/industries/education" },
-  { name: "Hospitality", path: "/industries/hospitality" }
+  { name: "Hospitality & Hotels", path: "/industries/hospitality" },
+  { name: "Gym & Fitness", path: "/industries/gym" }
 ];
 
 const serviceLinks = [
@@ -34,6 +35,8 @@ export default function Navbar({ ctaText = "Get Started" }) {
   const location = useLocation();
 
   const isActive = (path) => location.pathname === path;
+  
+  const WHATSAPP_URL = "https://wa.me/919867799655?text=Hello%20Synckraft%20Team%2C%0A%0AI'm%20interested%20in%20your%20Specialized%20AI%20systems%20for%20diverse%20industry%20requirements.%0A%0APlease%20help%20me%20with%3A%0A%0A%E2%80%A2%20Healthcare%20AI%20%20%0A%E2%80%A2%20Fashion%20AI%20%20%0A%E2%80%A2%20Beauty%20AI%20%20%0A%E2%80%A2%20Jewellery%20AI%20%20%0A%E2%80%A2%20Supermarket%20AI%20%20%0A%E2%80%A2%20Furniture%20AI%20%20%0A%E2%80%A2%20Gym%20AI%20%20%0A%E2%80%A2%20Retail%20AI%20%20%0A%E2%80%A2%20AI%20%2F%20Obsidian%20Core%20Systems%20%20%0A%0AI%20would%20like%20to%3A%0A%0A%E2%80%A2%20Schedule%20a%20Demo%20%20%0A%E2%80%A2%20Talk%20to%20Sales%20%20%0A%0APlease%20assist%20me%20with%20the%20next%20steps.%0A%0AThank%20you.";
 
   return (
     <header className="fixed top-0 w-full z-50 bg-[#0b1326]/60 backdrop-blur-xl shadow-2xl shadow-[#000000]/20">
@@ -81,16 +84,14 @@ export default function Navbar({ ctaText = "Get Started" }) {
             </div>
           </div>
 
-          <Link to="/products" className={clsx("font-bold text-sm transition-all duration-300", isActive('/products') ? "text-[#89ceff] border-b-2 border-[#89ceff] pb-1" : "text-[#dae2fd]/70 hover:text-[#dae2fd]")}>Products</Link>
-          <Link to="/about" className={clsx("font-bold text-sm transition-all duration-300", isActive('/about') ? "text-[#89ceff] border-b-2 border-[#89ceff] pb-1" : "text-[#dae2fd]/70 hover:text-[#dae2fd]")}>About</Link>
+          <Link to="/products" className={clsx("font-bold text-sm transition-all duration-300", isActive('/products') ? "text-[#89ceff] border-b-2 border-[#89ceff] pb-1" : "text-[#dae2fd]/70 hover:text-[#dae2fd]")}>Demo</Link>
           <Link to="/contact" className={clsx("font-bold text-sm transition-all duration-300", isActive('/contact') ? "text-[#89ceff] border-b-2 border-[#89ceff] pb-1" : "text-[#dae2fd]/70 hover:text-[#dae2fd]")}>Contact</Link>
         </div>
 
-        {/* CTA & MOBILE TOGGLE */}
         <div className="flex items-center gap-4">
-          <button className="hidden sm:block bg-gradient-to-br from-primary to-on-primary-container text-on-primary font-bold px-6 py-2.5 rounded-lg hover:brightness-110 active:scale-95 transition-all text-sm">
+          <a href={WHATSAPP_URL} className="hidden sm:block bg-gradient-to-br from-primary to-on-primary-container text-on-primary font-bold px-6 py-2.5 rounded-lg hover:brightness-110 active:scale-95 transition-all text-sm">
             {ctaText}
-          </button>
+          </a>
           <button className="lg:hidden text-primary" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
             {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
@@ -114,7 +115,7 @@ export default function Navbar({ ctaText = "Get Started" }) {
           </div>
 
           <div className="px-4 py-2">
-            <Link to="/services" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-bold text-primary mb-2 block">Services</Link>
+            <Link to="/services" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-bold text-primary mb-2 block">Solutions</Link>
             <div className="grid grid-cols-2 gap-2 pl-4 border-l border-primary/20">
               {serviceLinks.map(link => (
                 <Link key={link.name} to={link.path} onClick={() => setIsMobileMenuOpen(false)} className="text-sm py-2 hover:text-primary text-on-surface-variant">
@@ -124,13 +125,12 @@ export default function Navbar({ ctaText = "Get Started" }) {
             </div>
           </div>
 
-          <Link to="/products" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-bold px-4 py-2 hover:bg-surface-container-low rounded-xl">Products</Link>
-          <Link to="/about" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-bold px-4 py-2 hover:bg-surface-container-low rounded-xl">About</Link>
+          <Link to="/products" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-bold px-4 py-2 hover:bg-surface-container-low rounded-xl">Demo</Link>
           <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-bold px-4 py-2 hover:bg-surface-container-low rounded-xl">Contact</Link>
           
-          <button className="bg-primary text-on-primary font-bold mx-4 py-3 rounded-xl mt-4 active:scale-95 transition-all text-sm">
+          <a href={WHATSAPP_URL} className="flex justify-center bg-primary text-on-primary font-bold mx-4 py-3 rounded-xl mt-4 active:scale-95 transition-all text-sm">
             {ctaText}
-          </button>
+          </a>
         </div>
       )}
     </header>

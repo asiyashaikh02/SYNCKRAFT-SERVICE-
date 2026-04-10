@@ -18,9 +18,10 @@ const Retail = lazy(() => import('./pages/industries/Retail'));
 const Furniture = lazy(() => import('./pages/industries/Furniture'));
 const Fashion = lazy(() => import('./pages/industries/Fashion'));
 const Jewelry = lazy(() => import('./pages/industries/Jewelry'));
-const Healthcare = lazy(() => import('./pages/industries/Healthcare'));
 const Automobile = lazy(() => import('./pages/industries/Automobile'));
 const Education = lazy(() => import('./pages/industries/Education'));
+const Healthcare = lazy(() => import('./pages/industries/Healthcare'));
+const Gym = lazy(() => import('./pages/industries/Gym'));
 const Hospitality = lazy(() => import('./pages/industries/Hospitality'));
 
 // Utility to handle hash scrolling
@@ -65,14 +66,14 @@ function App() {
           <Route path="/industries/furniture" element={<Furniture />} />
           <Route path="/industries/fashion" element={<Fashion />} />
           <Route path="/industries/jewelry" element={<Jewelry />} />
-          <Route path="/industries/healthcare" element={<Healthcare />} />
           <Route path="/industries/automobile" element={<Automobile />} />
           <Route path="/industries/education" element={<Education />} />
+          <Route path="/industries/healthcare" element={<Healthcare />} />
+          <Route path="/industries/gym" element={<Gym />} />
           <Route path="/industries/hospitality" element={<Hospitality />} />
 
           <Route path="/services" element={<Services />} />
           <Route path="/products" element={<Products />} />
-          <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </Suspense>

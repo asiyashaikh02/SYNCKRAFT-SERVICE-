@@ -1,10 +1,28 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 export default function IndustryTemplate({ title, subtitle, description, features }) {
+  const WHATSAPP_URL = "https://wa.me/919867799655?text=Hello%20Synckraft%20Team%2C%0A%0AI'm%20interested%20in%20your%20Specialized%20AI%20systems%20for%20diverse%20industry%20requirements.%0A%0APlease%20help%20me%20with%3A%0A%0A%E2%80%A2%20Healthcare%20AI%20%20%0A%E2%80%A2%20Fashion%20AI%20%20%0A%E2%80%A2%20Beauty%20AI%20%20%0A%E2%80%A2%20Jewellery%20AI%20%20%0A%E2%80%A2%20Supermarket%20AI%20%20%0A%E2%80%A2%20Furniture%20AI%20%20%0A%E2%80%A2%20Gym%20AI%20%20%0A%E2%80%A2%20Retail%20AI%20%20%0A%E2%80%A2%20AI%20%2F%20Obsidian%20Core%20Systems%20%20%0A%0AI%20would%20like%20to%3A%0A%0A%E2%80%A2%20Schedule%20a%20Demo%20%20%0A%E2%80%A2%20Talk%20to%20Sales%20%20%0A%0APlease%20assist%20me%20with%20the%20next%20steps.%0A%0AThank%20you.";
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
+  };
+  
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+  };
+
   return (
-    <main className="pt-24 min-h-screen">
+    <motion.main 
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+      className="pt-24 min-h-screen"
+    >
       {/* Hero Section */}
-      <section className="px-8 max-w-7xl mx-auto mb-24 text-center">
+      <motion.section variants={itemVariants} className="px-8 max-w-7xl mx-auto mb-24 text-center">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary-container/30 text-on-secondary-container text-xs font-bold tracking-widest uppercase mb-6">
           <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
           {subtitle || "Synckraft Ecosystem"}
@@ -16,49 +34,49 @@ export default function IndustryTemplate({ title, subtitle, description, feature
           {description}
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <button className="px-10 py-5 bg-gradient-to-br from-[#89ceff] to-[#0089c3] text-[#00344d] rounded-xl font-bold text-xl hover:shadow-[0_0_20px_rgba(137,206,255,0.4)] transition-all">
+          <a href={WHATSAPP_URL} className="px-10 py-5 bg-gradient-to-br from-[#89ceff] to-[#0089c3] text-[#00344d] rounded-xl font-bold text-xl hover:shadow-[0_0_20px_rgba(137,206,255,0.4)] transition-all">
             Book a Demo
-          </button>
-          <button className="px-10 py-5 bg-transparent border border-outline-variant text-on-surface rounded-xl font-bold text-xl hover:bg-surface-container-highest transition-colors">
+          </a>
+          <a href={WHATSAPP_URL} className="px-10 py-5 bg-transparent border border-outline-variant text-on-surface rounded-xl font-bold text-xl hover:bg-surface-container-highest transition-colors">
             Contact Sales
-          </button>
+          </a>
         </div>
-      </section>
+      </motion.section>
 
       {/* Features Section */}
       <section className="px-8 max-w-7xl mx-auto mb-24">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <motion.div variants={containerVariants} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features?.map((feature, idx) => (
-            <div key={idx} className="bg-surface-container-low p-8 rounded-3xl border border-outline-variant/10 hover:border-primary/20 transition-all hover:-translate-y-1">
-              <div className="w-12 h-12 rounded-2xl bg-surface-container-highest flex items-center justify-center mb-6">
-                <span className="material-symbols-outlined text-primary text-2xl">{feature.icon}</span>
+            <motion.div variants={itemVariants} key={idx} className="bg-surface-container-low p-8 rounded-3xl border border-outline-variant/10 hover:border-primary/20 transition-all hover:-translate-y-2 shadow-lg">
+              <div className="w-14 h-14 rounded-2xl bg-surface-container-highest flex items-center justify-center mb-6">
+                <span className="material-symbols-outlined text-primary text-3xl">{feature.icon}</span>
               </div>
               <h3 className="text-2xl font-headline font-bold text-on-surface mb-3">{feature.title}</h3>
-              <p className="text-on-surface-variant leading-relaxed">{feature.description}</p>
-            </div>
+              <p className="text-on-surface-variant leading-relaxed text-sm">{feature.description}</p>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </section>
 
       {/* Benefits Section */}
-      <section className="px-8 max-w-screen-2xl mx-auto mb-24 bg-surface-container-highest rounded-[3rem] py-20 relative overflow-hidden text-center">
+      <motion.section variants={itemVariants} className="px-8 max-w-screen-2xl mx-auto mb-24 bg-surface-container-highest rounded-[3rem] py-20 relative overflow-hidden text-center">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-tertiary/5"></div>
         <div className="relative z-10 max-w-4xl mx-auto">
           <h2 className="text-4xl font-headline font-extrabold text-on-surface mb-6">Designed for Scale and Security</h2>
           <p className="text-lg text-on-surface-variant">Synckraft provides unified operations, data integrity, and deep customizability required to completely run your enterprise through a single cognitive platform.</p>
         </div>
-      </section>
+      </motion.section>
 
       {/* CTA Section */}
-      <section className="px-8 max-w-7xl mx-auto mb-32">
-        <div className="p-16 rounded-[2rem] bg-surface-container relative overflow-hidden border border-outline-variant/20 shadow-[0_40px_100px_rgba(0,0,0,0.4)] text-center">
+      <motion.section variants={itemVariants} className="px-8 max-w-7xl mx-auto mb-32">
+        <div className="p-16 rounded-[2rem] bg-surface-container relative overflow-hidden border border-outline-variant/20 shadow-[0_40px_100px_rgba(0,0,0,0.4)] text-center group hover:border-primary/40 transition-colors">
           <h2 className="text-4xl font-headline font-extrabold text-on-surface mb-6 relative z-10">Start Your Digital Transformation</h2>
           <p className="text-on-surface-variant mb-10 text-lg relative z-10">Integrate cognitive models into your business process safely and scale globally.</p>
-          <button className="px-12 py-4 bg-primary text-on-primary font-bold text-lg rounded-xl shadow-lg shadow-primary/30 active:scale-95 transition-all relative z-10">
+          <button className="px-12 py-4 bg-primary text-on-primary font-bold text-lg rounded-xl shadow-lg shadow-primary/30 active:scale-95 transition-all relative z-10 group-hover:scale-105">
             Get Started
           </button>
         </div>
-      </section>
-    </main>
+      </motion.section>
+    </motion.main>
   );
 }
